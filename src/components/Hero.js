@@ -1,11 +1,20 @@
 'use client'
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import Image from 'next/image'
-import { motion } from 'framer-motion'
+import { motion, useAnimate, useInView } from 'framer-motion'
+import { useScroll } from 'framer-motion'
 
 import damiPianoImage from '../assets/DamiPianoImage.JPG'
+import Reveal from './Reveal'
 
 export default function Hero() {
+
+  const [scope, animate] = useAnimate();
+
+  const buttonStaggeredAnimation = async () => {
+    animate("button", {})
+  };
+
   return (
     <header className='flex flex-col h-screen items-center py-10 justify-center overflow-hidden'>
       <div className='justify-center'>
@@ -40,6 +49,25 @@ export default function Hero() {
             </motion.span> 
           </motion.span>
       </div>
+      <motion.div
+      ref={scope}
+      className='flex flex-row gap-x-40'>
+        <Reveal>
+          <button>
+            <h1 className='uppercase'>About</h1>
+          </button>
+        </Reveal>
+        <Reveal>
+          <button>
+            <h1 className='uppercase'>Projects</h1>
+          </button>
+        </Reveal>
+        <Reveal> 
+          <button>
+            <h1 className='uppercase'>Skills</h1>
+          </button>
+        </Reveal>
+      </motion.div>
     </header>
   )
 }
