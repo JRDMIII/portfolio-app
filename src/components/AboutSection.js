@@ -1,6 +1,7 @@
 'use client'
 import React from 'react'
 import { motion, useAnimate, stagger } from 'framer-motion'
+import Skill from './Skill';
 
 export default function AboutSection() {
 
@@ -57,8 +58,15 @@ export default function AboutSection() {
           </ul>
 
           <motion.h1 initial={interestListInit} className='text-2xl pb-4 font-semibold'>Skills</motion.h1>
-          <ul id='skills' className='pb-5 space-y-4'>
-            {/* Gonna create a skills thingy */}
+          <ul id='skills' className='grid grid-cols-4 pb-5'>
+            <Skill />
+            <Skill />
+            <Skill />
+            <Skill />
+            <Skill />
+            <Skill />
+            <Skill />
+            <Skill />
           </ul>
         </motion.div>
       </div>

@@ -30,7 +30,7 @@ export default function Hero() {
           animate="visible"
           transition={{ duration: 1 }}
           className='inline-block font-normal max-sm:text-4xl sm:text-5xl md:text-7xl lg:text-8xl'>
-            <h1 className='hover:tracking-[1.5px] transition-all duration-200'>Hey!&nbsp;</h1>
+            <h1 className='hover:tracking-[1.5px] transition-all duration-200'>Hey,&nbsp;</h1>
           </motion.span>
           
           <motion.span
