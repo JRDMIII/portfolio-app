@@ -25,3 +25,9 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+@layer base {
+  .footerLinks {
+    @apply font-semibold text-sm text-gray-400 hover:text-gray-300 active:text-green-600 transition-all duration-500;
+  }
+}
