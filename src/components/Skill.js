@@ -1,17 +1,14 @@
 import React from 'react'
-import Image from 'next/image'
-import pythonImage from '../components/Logos/Python.png'
 
-export default function Skill() {
+export default function Skill({ symbol, name, desc }) {
   return (
-    <div className='group relative flex cursor-pointer'>
-        <Image src={pythonImage} className='w-[60px] rounded-full border-2 p-1'/>
+    <div className='group/item cursor-help border-2 w-[80px] h-[80px] relative flex rounded-md justify-center items-center'>
+      <h1 className='p-1 text-center font-semibold text-xl group-hover/item: transition-all duration-200 ease-out'>{symbol}</h1>
 
-        <div className='flex justify-center items-center absolute opacity-0 group-hover:opacity-80 transition-all duration-300 w-[60px] h-[60px] rounded-full group-hover:bg-white z-0'>
-            <div className='h-[50%]'>
-                <p>100%</p>
-            </div>
-        </div>
+      <span className='tooltipText pt-2 pb-3 group-hover/item:opacity-100 group-hover/item:visible transition-all duration-300 top-[80%] w-[225px] bg-gray-900 overflow-hidden'>
+        <h1 className='text-left font-semibold'>{ name }</h1>
+        {desc}
+      </span>
     </div>
   )
 }
