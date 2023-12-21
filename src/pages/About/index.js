@@ -13,4 +13,4 @@ export default function About() {
   )
 }
 
-About.getLayout = function getLayout(page) { return (<Layout>{page}</Layout>) }
+About.getLayout = function getLayout(page) { return (<Layout>{page}</Layout>) }  
