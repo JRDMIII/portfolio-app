@@ -5,3 +5,5 @@ export default function Loading() {
     <div>Loading Page</div>
   )
 }
+
+Loading.getLayout = function getLayout(page) { return (<Layout>{page}</Layout>) }  
