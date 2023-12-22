@@ -25,6 +25,7 @@ body {
     )
     rgb(var(--background-start-rgb));
   scrollbar-track-color: black;
+  cursor: url('../assets/circleCursor.png'), auto;
 }
 
 @layer base { 

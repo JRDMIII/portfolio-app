@@ -7,7 +7,7 @@ import bgVideo from '../assets/ProgrammingGIF.gif'
 
 export default function ProjectHero() {
     return (
-        <div className="flex items-center relative overflow-hidden justify-center h-[400px]">
+        <div className="flex items-center relative overflow-hidden justify-center py-[10%] rounded-b-[50px] hover:rounded-none transition-all duration-500">
             <motion.h1
             initial={{ opacity: 0 }}
             animate={{ opacity: 100 }}
@@ -15,7 +15,7 @@ export default function ProjectHero() {
             className="font-semibold tracking-widest uppercase text-6xl hover:tracking-[10px] transition-all duration-500">
                 Projects
             </motion.h1>
-            <Image className="absolute opacity-40 -z-10" src={bgVideo} width={2000} />
+            <Image className="absolute opacity-40 -z-10" src={bgVideo} fill={true}/>
         </div>
     )
 }
