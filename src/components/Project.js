@@ -34,7 +34,7 @@ export default function Project({ title, description, link, projectgif }) {
                     <motion.h1 initial={{ opacity: 0, x: -10 }} className='group/item text-2xl py-4'>
                         <motion.a onClick={() => arrowLeave()} className='font-semibold' href={link}>
                                 View Project&nbsp;
-                                <motion.h1 className='group/item inline text-orange-500 group-hover/item:ml-2 group-hover/item:text-orange-300 transition-all duration-300 ease-out'>
+                                <motion.h1 className='group/item inline text-orange-500 group-hover/item:ml-1 group-hover/item:text-orange-300 transition-all duration-300 ease-out'>
                                     <MotionArrow id='arrow' className='text-[24px] inline' />
                                 </motion.h1>
                         </motion.a>
