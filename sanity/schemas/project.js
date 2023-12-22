@@ -18,5 +18,10 @@ export const project = {
       name: 'link',
       type: 'url',
     },
+    {
+      title: 'Project GIF',
+      name: 'projectgif',
+      type: 'image'
+    }
   ],
 }

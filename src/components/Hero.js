@@ -28,7 +28,7 @@ export default function Hero() {
           variants={titleTextAnim}
           initial="hidden"
           animate="visible"
-          transition={{ duration: 1 }}
+          transition={{ duration: 1, ease: "easeOut" }}
           className='inline-block font-normal max-sm:text-4xl sm:text-5xl md:text-7xl lg:text-8xl'>
             <h1 className='hover:tracking-[1.5px] transition-all duration-200'>Hey,&nbsp;</h1>
           </motion.span>
@@ -37,7 +37,7 @@ export default function Hero() {
           variants={titleTextAnim}
           initial="hidden"
           animate="visible"
-          transition={{ delay: 1, duration: 1 }}
+          transition={{ delay: 1, duration: 1, ease: "easeOut" }}
           className='inline-block font-normal max-sm:text-4xl sm:text-5xl md:text-7xl lg:text-8xl'>
             <h1 className='hover:tracking-[1.5px] transition-all duration-200'>I'm&nbsp;</h1>
           </motion.span>
@@ -45,13 +45,13 @@ export default function Hero() {
           <motion.span
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 100, y: 0 }}
-          transition={{ delay: 1.2, duration: 1 }}
+          transition={{ delay: 1.2, duration: 1, ease: "easeOut" }}
           className='inline-block font-semibold max-sm:text-4xl sm:text-5xl md:text-7xl lg:text-8xl'>
             <h1 className='inline-block hover:tracking-[1.5px] transition-all duration-200'>Dami&nbsp;</h1>
             <motion.span
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 100, y: 0 }}
-            transition={{ delay: 1.5, duration: 1, }}
+            transition={{ delay: 1.5, duration: 1, ease: "easeOut" }}
             className='inline-block transition-all duration-200 ease-out max-sm:w-[50px] sm:w-[50px] md:w-[100px] lg:w-[150px]'>
               <Image className='inline rounded-full' src={damiPianoImage} />
             </motion.span> 
@@ -68,7 +68,7 @@ export default function Hero() {
               key={linkTitle}
               initial={buttonInitial} 
                 className='uppercase'>
-                  <a href={linkTitle} className="tracking-[0.5px] transition-all duration-100 max-sm:text-sm md:text-sm lg:text-md hover:border-l-[3px] pl-1 hover:border-separate ease-in-out">
+                  <a href={linkTitle} className="tracking-[0.5px] max-sm:text-sm md:text-sm lg:text-md text-gray-200 hover:text-white hover:tracking-[1px] transition-all duration-200 ease-in-out">
                     {linkTitle}
                   </a>
               </motion.li>

@@ -1,11 +1,15 @@
 'use client'
 import React from 'react'
+import Image from 'next/image'
 import { GoArrowRight } from 'react-icons/go'
 import { motion } from 'framer-motion'
-
+import imageUrlBuilder from '@sanity/image-url'
+import { client } from '../../sanity/lib/client'
 import { useAnimate, stagger } from 'framer-motion'
 
-export default function Project({ title, description, link }) {
+const builder = imageUrlBuilder(client)
+
+export default function Project({ title, description, link, projectgif }) {
     const [scope, animate] = useAnimate()
     const MotionArrow = motion(GoArrowRight)
     
@@ -18,13 +22,13 @@ export default function Project({ title, description, link }) {
     }
 
     return (
-        <div className='flex flex-col h-screen'>
+        <div className='flex flex-col h-screen relative overflow-hidden'>
             <div className=''>
                 <motion.div ref={scope} animate={constAnimation} className='flex-1 font-light m-20 w-[30%]'>
-                    <motion.h1 initial={{ opacity: 0, x: -10 }} className='text-4xl font-semibold pb-5'>
+                    <motion.h1 initial={{ opacity: 0, x: -10 }} className='text-4xl font-semibold pb-5 transition-all duration-300'>
                         {title}
                     </motion.h1>
-                    <motion.h1 initial={{ opacity: 0, x: -10 }} className='text-2xl text-left font-light'>
+                    <motion.h1 initial={{ opacity: 0, x: -10 }} className='text-2xl text-left font-light transition-all duration-300'>
                         {description}
                     </motion.h1>
                     <motion.h1 initial={{ opacity: 0, x: -10 }} className='group/item text-2xl py-4'>
@@ -37,7 +41,11 @@ export default function Project({ title, description, link }) {
                     </motion.h1>
                 </motion.div>
             </div>
-            {/* <Image src={} /> */}
+            <img className='absolute w-screen opacity-30 lg:visible -z-10' src={urlFor(projectgif).url()} />
         </div>
     )
+}
+
+function urlFor(source) {
+    return builder.image(source)
 }

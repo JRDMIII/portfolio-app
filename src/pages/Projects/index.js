@@ -5,6 +5,7 @@ import React from 'react'
 import Footer from '@/components/Footer'
 
 import { client } from '../../../sanity/lib/client'
+import { GoArrowUp } from 'react-icons/go'
 
 export async function getStaticProps() {
   const projects = await client.fetch(`*[_type == "project"]`)
@@ -17,17 +18,18 @@ export async function getStaticProps() {
 }
 
 export default function Projects({ projects }) {
-  return (
-    <div className='snap snap-y-mandatory'>
-        
-        <ProjectHero />
 
-        {
-          projects.map(({ title, description, link }) => (
-            <Project title={title} description={description} link={link} />
-          ))
-        }
-        <Footer />
+  return (
+    <div className='h-screen snap-y snap-mandatory overflow-y-scroll'>
+      <ProjectHero />
+      
+      {
+        projects.map(({ title, description, link, projectgif }) => (
+          <Project title={title} description={description} link={link} projectgif={projectgif} />
+        ))
+      }
+
+      <Footer/>
     </div>
   )
 }
