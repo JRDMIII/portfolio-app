@@ -4,10 +4,26 @@ import Layout from '@/app/layout'
 import Footer from '@/components/Footer';
 import AboutSection from '@/components/AboutSection';
 
-export default function About() {
+import { client } from '../../../sanity/lib/client';
+
+export async function getStaticProps() {
+  const skills = await client.fetch(`*[_type == "skill"]`)
+  const images = await client.fetch(`*[_type == "artimages"].images`)
+  const interestArray = await client.fetch(`*[_type == "interestArray"].interests`)
+
+  return {
+      props: {
+          skills,
+          images,
+          interestArray
+      }
+  }
+}
+
+export default function About({ skills, images, interestArray }) {
   return (
     <div>
-      <AboutSection />
+      <AboutSection skills={skills} images={images} interestArray={interestArray} />
       <Footer />
     </div>
   )

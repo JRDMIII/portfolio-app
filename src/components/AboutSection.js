@@ -1,21 +1,16 @@
 'use client'
 import React from 'react'
-import Image from 'next/image';
 import { motion, useAnimate, stagger } from 'framer-motion'
 import Skill from './Skill';
-import getSkillList from './MySkillsList';
+import imageUrlBuilder from '@sanity/image-url'
+import { client } from '../../sanity/lib/client'
 
-import image1 from '../assets/stryvznz_ufo.gif'
-import image2 from '../assets/Togekiss.jpg'
-import image3 from '../assets/JulieBackground.jpg'
-import image4 from '../assets/stryvznz_cars.gif'
-import image5 from '../assets/Duck.jpg'
+const builder = imageUrlBuilder(client)
 
-export default function AboutSection() {
+export default function AboutSection({ skills, images, interestArray }) {
 
   const MotionSkill = motion(Skill);
   const [scope, animate] = useAnimate();
-  const skills = getSkillList();
 
   const enterAnimation = {
     hidden: { opacity: 0, x: 25 },
@@ -23,8 +18,6 @@ export default function AboutSection() {
   }
 
   const interestListInit = { opacity: 0, x: 20 }
-
-  const artImages = [ image1, image2, image3, image4, image5 ]
 
   const staggeredListAnimation = async () => {
     await animate("h1", { opacity: 1, x: 0 }, { duration: 1, delay: stagger(0.3, { startDelay: 1 }), ease: "easeOut" })
@@ -72,28 +65,33 @@ export default function AboutSection() {
                 <span className='tooltipText bg-slate-950 grid py-4 group-hover/item:opacity-100 group-hover/item:visible transition-all duration-700 left-[110%] w-[300px] h-[300px] overflow-y-scroll gap-y-4'>
                   <h1 className='text-sm text-center font-light'>Art Examples</h1>
                   {
-                    artImages.map((image) => (
-                      <Image src={image} />
+                    images[0].map((image) => (
+                      <img src={urlFor(image).url()} />
                     ))
                   }
                 </span>
               </div>
             </motion.li>
-            <motion.li initial={interestListInit} className='text-xl pl-5'>Playing Piano 🎹</motion.li>
-            <motion.li initial={interestListInit} className='text-xl pl-5'>Video Editing 🎬</motion.li>
-            <motion.li initial={interestListInit} className='text-xl pl-5'>Gym 🏋️‍♀️</motion.li>
-            <motion.li initial={interestListInit} className='text-xl pl-5'>Gaming 🎮</motion.li>
+            {
+              interestArray[0].map((text) => (
+                <motion.li initial={interestListInit} className='text-xl pl-5'>{ text }</motion.li>
+              ))
+            }
           </ul>
 
           <motion.h1 initial={interestListInit} className='text-2xl pb-6 font-semibold'>Skills</motion.h1>
           <ul id='skills' className='grid grid-cols-[80px_80px_80px_80px_80px] gap-x-3 gap-y-3 justify-center items-left'>
             { 
-              skills.map(({ symbol, name, desc }) => (
-                <motion.li initial={interestListInit} id='skill'><MotionSkill symbol={symbol} name={name} desc={desc} /></motion.li>
+              skills.map(({ symbol, name, description }) => (
+                <motion.li key={name} initial={interestListInit} id='skill'><MotionSkill symbol={symbol} name={name} desc={description} /></motion.li>
               ))
             }
           </ul>
         </motion.div>
       </div>
   )
+}
+
+function urlFor(source) {
+  return builder.image(source)
 }
