@@ -7,8 +7,8 @@ const montserrat = Montserrat({ subsets: ['latin'] })
 
 export default function Layout({ children }) {
   return (
-    <html lang="en">
-      <body className={montserrat.className}>
+    <html lang="en" className='dark'>
+      <body className={`${montserrat.className} bg-white dark:bg-black`}>
         <Suspense fallback={ <Loading /> }>
           {children}
         </Suspense>

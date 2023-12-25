@@ -2,7 +2,9 @@ import React from 'react'
 
 export default function Loading() {
   return (
-    <div>Loading Page</div>
+    <div className='bg-black text-white'>
+      Loading Page
+    </div>
   )
 }
 

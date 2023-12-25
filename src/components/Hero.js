@@ -30,7 +30,7 @@ export default function Hero() {
           animate="visible"
           transition={{ duration: 1, ease: "easeOut" }}
           className='inline-block font-normal max-sm:text-4xl sm:text-5xl md:text-7xl lg:text-8xl'>
-            <h1 className='hover:tracking-[1.5px] transition-all duration-200'>Hey,&nbsp;</h1>
+            <h1 className='hover:tracking-[1.5px] transition-all text-black dark:text-white duration-200'>Hey,&nbsp;</h1>
           </motion.span>
           
           <motion.span
@@ -39,7 +39,7 @@ export default function Hero() {
           animate="visible"
           transition={{ delay: 1, duration: 1, ease: "easeOut" }}
           className='inline-block font-normal max-sm:text-4xl sm:text-5xl md:text-7xl lg:text-8xl'>
-            <h1 className='hover:tracking-[1.5px] transition-all duration-200'>I'm&nbsp;</h1>
+            <h1 className='hover:tracking-[1.5px] transition-all text-black dark:text-white duration-200'>I'm&nbsp;</h1>
           </motion.span>
 
           <motion.span
@@ -47,7 +47,7 @@ export default function Hero() {
           animate={{ opacity: 100, y: 0 }}
           transition={{ delay: 1.2, duration: 1, ease: "easeOut" }}
           className='inline-block font-semibold max-sm:text-4xl sm:text-5xl md:text-7xl lg:text-8xl'>
-            <h1 className='inline-block hover:tracking-[1.5px] transition-all duration-200'>Dami&nbsp;</h1>
+            <h1 className='inline-block hover:tracking-[1.5px] text-black dark:text-white transition-all duration-200'>Dami&nbsp;</h1>
             <motion.span
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 100, y: 0 }}
@@ -68,7 +68,7 @@ export default function Hero() {
               key={linkTitle}
               initial={buttonInitial} 
                 className='uppercase'>
-                  <a href={linkTitle} className="tracking-[0.5px] max-sm:text-sm md:text-sm lg:text-md text-gray-200 hover:text-white hover:tracking-[1px] transition-all duration-200 ease-in-out">
+                  <a href={linkTitle} className="tracking-[0.5px] max-sm:text-sm md:text-sm lg:text-md text-white dark:text-gray-200 hover:text-white hover:tracking-[1px] transition-all duration-200 ease-in-out">
                     {linkTitle}
                   </a>
               </motion.li>

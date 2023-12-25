@@ -22,7 +22,7 @@ export async function getStaticProps() {
 
 export default function About({ skills, images, interestArray }) {
   return (
-    <div>
+    <div className='w-full bg-black text-white'>
       <AboutSection skills={skills} images={images} interestArray={interestArray} />
       <Footer />
     </div>

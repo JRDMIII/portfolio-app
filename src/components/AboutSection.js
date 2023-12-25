@@ -17,23 +17,23 @@ export default function AboutSection({ skills, images, interestArray }) {
     visible: { opacity: 100, x: 0 },
   }
 
-  const interestListInit = { opacity: 0, x: 20 }
+  const interestListInit = { opacity: 0 }
 
   const staggeredListAnimation = async () => {
     await animate("h1", { opacity: 1, x: 0 }, { duration: 1, delay: stagger(0.3, { startDelay: 1 }), ease: "easeOut" })
     await animate("li", { opacity: 1, x: 0 }, { duration: 1, delay: stagger(0.2), ease: "easeOut" })
-    await animate("#skill", { opacity: 1, x: 0 }, { duration: 1, delay: stagger(0.2), ease: "easeOut" })
+    await animate("#skill", { opacity: 1 }, { duration: 1, delay: stagger(0.2), ease: "easeOut" })
   };
 
   return (
-    <div id='about-section' className='flex flex-row h-screen justify-center items-center'>
-        <div id='left-column' className='flex-1 items-center mx-40'>
+    <div id='about-section' className='flex sm:flex-row flex-col sm:h-screen h-fit justify-center items-center'>
+        <div id='left-column' className='flex-1 items-center mx-5 mt-5 sm:mx-40 sm:mt-0'>
           <motion.h1 
           variants={enterAnimation} 
           initial="hidden" 
           animate="visible" 
           transition={{ duration: 1 }}
-          id='about-title' className='text-4xl text-left font-bold m-5'>
+          id='about-title' className='text-4xl text-left font-bold m-5 mr-0 sm:mr-5'>
             I'm Dami, an aspiring&nbsp; 
             <b>software engineer</b> studying at the&nbsp;
             <a href='https://warwick.ac.uk' className='text-gray-400 hover:text-gray-200 transition-all duration-700'><b>University of Warwick</b></a>.
@@ -44,18 +44,19 @@ export default function AboutSection({ skills, images, interestArray }) {
           initial="hidden" 
           animate="visible" 
           transition={{ duration: 1, delay: 0.35 }}
-          className='m-5 text-2xl font-light'>
+          className='text-xl sm:text-3xl font-light m-5 mr-0 sm:mr-5'>
             Hey, I'm <b>Dami</b>, a Computer Scientist in my first year at the University of Warwick.
             I'm based in London and have a passion for sleek design and clean interfaces.
             I'm in the early stages of learning to utilise the <a href='https://nextjs.org' className='font-semibold text-gray-400 hover:text-gray-200 transition-all duration-700'>Nextjs</a> framework to create portfolio's and personal websites.
             It's a <b>life-long dream</b> of mine to make my <b>passion a profession</b> and I hope to bring that dream to life in the future.
           </motion.p>
         </div>
-
+        
         <motion.div 
         ref={scope} 
         animate={staggeredListAnimation}
-        className='flex-1 mx-40'>
+        layout
+        className='flex-1 w-full px-10 pt-5 sm:pt-0 sm:px-0 mx-40'>
           <motion.h1 initial={interestListInit} className='text-2xl pb-6 font-semibold'>My Interests</motion.h1>
           <ul id='interests' className='pb-10 space-y-6'>
             <motion.li initial={interestListInit} className='text-xl'>
@@ -79,8 +80,8 @@ export default function AboutSection({ skills, images, interestArray }) {
             }
           </ul>
 
-          <motion.h1 initial={interestListInit} className='text-2xl pb-6 font-semibold'>Skills</motion.h1>
-          <ul id='skills' className='grid grid-cols-[80px_80px_80px_80px_80px] gap-x-3 gap-y-3 justify-center items-left'>
+          <motion.h1 initial={interestListInit} className='text-2xl pb-10 sm:pb-6 font-semibold'>Skills</motion.h1>
+          <ul id='skills' className='grid grid-cols-[80px_80px_80px_80px] sm:grid-cols-[80px_80px_80px_80px_80px] gap-x-3 gap-y-3 justify-center sm:items-left items-center pb-6 w-fit'>
             { 
               skills.map(({ symbol, name, description }) => (
                 <motion.li key={name} initial={interestListInit} id='skill'><MotionSkill symbol={symbol} name={name} desc={description} /></motion.li>

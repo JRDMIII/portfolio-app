@@ -20,7 +20,7 @@ export async function getStaticProps() {
 export default function Projects({ projects }) {
 
   return (
-    <div className='h-screen snap-y snap-mandatory overflow-y-scroll'>
+    <div className='h-screen snap-y snap-mandatory overflow-y-scroll text-white'>
       <ProjectHero />
       
       {
