@@ -11,6 +11,7 @@ export default function Footer() {
                     <li className='footerLinks'><a href="https://www.linkedin.com/in/dami-olatunji-71b992227/">LinkedIn</a></li>
                     <li className='footerLinks'><a onClick={() => navigator.clipboard.writeText("damiolatunji4tj@gmail.com")} className='hover:cursor-pointer'>Email</a></li>
                     <li className='footerLinks'><a href="https://docs.google.com/document/d/1am8jNgx-7fSWewzev_JtTi_49tmKvoWuTQJ8Mmw5aB0/edit?usp=sharing">Resume</a></li>
+                    <li className='footerLinks'><a href="https://www.fiverr.com/strayvisions?public_mode=true">Fiverr</a></li>
                 </ul>
             </div>
         </div>
