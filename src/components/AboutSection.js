@@ -26,7 +26,7 @@ export default function AboutSection({ skills, images, interestArray }) {
   };
 
   return (
-    <div id='about-section' className='flex sm:flex-row flex-col sm:h-screen h-fit justify-center items-center'>
+    <div id='about-section' className='flex sm:flex-row flex-col sm:h-screen h-fit justify-center items-center w-screen'>
         <div id='left-column' className='flex-1 items-center mx-5 mt-5 sm:mx-40 sm:mt-0'>
           <motion.h1 
           variants={enterAnimation} 
