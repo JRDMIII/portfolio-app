@@ -20,7 +20,7 @@ export default function AboutSection({ skills, images, interestArray }) {
   const interestListInit = { opacity: 0 }
 
   const staggeredListAnimation = async () => {
-    await animate("h1", { opacity: 1, x: 0 }, { duration: 1, delay: stagger(0.3, { startDelay: 1 }), ease: "easeOut" })
+    await animate("h1", { opacity: 1, x: 0 }, { duration: 1, delay: stagger(0.2, { startDelay: 0.75 }), ease: "easeOut" })
     await animate("li", { opacity: 1, x: 0 }, { duration: 1, delay: stagger(0.2), ease: "easeOut" })
     await animate("#skill", { opacity: 1 }, { duration: 1, delay: stagger(0.2), ease: "easeOut" })
   };
@@ -33,9 +33,9 @@ export default function AboutSection({ skills, images, interestArray }) {
           initial="hidden"
           animate="visible" 
           transition={{ duration: 1 }}
-          id='about-title' className='sm:text-4xl text-2xl text-left font-bold m-5'>
+          id='about-title' className='sm:text-3xl text-2xl text-left font-bold m-5'>
             I'm Dami, an aspiring&nbsp; 
-            <b>software engineer</b> studying at the&nbsp;
+            <b>software engineer</b> studying at the <br />
             <a href='https://warwick.ac.uk' className='text-gray-400 hover:text-gray-200 transition-all duration-700'><b>University of Warwick</b></a>.
           </motion.h1>
 
@@ -44,7 +44,7 @@ export default function AboutSection({ skills, images, interestArray }) {
           initial="hidden" 
           animate="visible" 
           transition={{ duration: 1, delay: 0.35 }}
-          className='text-[16px] sm:text-3xl text-left font-light m-5'>
+          className='text-[16px] sm:text-2xl text-left font-light m-5'>
             Hey, I'm <b>Dami</b>, a Computer Scientist in my first year at the University of Warwick.
             I'm based in London and have a passion for sleek design and clean interfaces.
             I'm in the early stages of learning to utilise the <a href='https://nextjs.org' className='font-semibold text-gray-400 hover:text-gray-200 transition-all duration-700'>Nextjs</a> framework to create portfolio's and personal websites.
