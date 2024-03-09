@@ -9,7 +9,7 @@ body {
 
 @layer base { 
   .footerLinks {
-    @apply font-semibold text-sm text-gray-700 sm:text-gray-400 hover:text-gray-300 active:text-green-600 transition-all duration-500;
+    @apply font-semibold sm:text-sm text-[16px] text-gray-700 sm:text-gray-400 hover:text-gray-300 active:text-green-600 transition-all duration-500;
   }
 
   .tooltipText {

@@ -4,8 +4,8 @@ export default function Footer() {
 
     return (
         <div id='footer' className='h-fit w-full bg-black'>
-            <div className='flex justify-center py-5 sm:pl-10'>
-                <ul className='flex gap-x-6 sm:gap-x-10 justify-center'>
+            <div className='flex justify-center py-5 m-0 sm:pl-10'>
+                <ul className='flex sm:flex-row flex-col gap-x-6 sm:gap-x-10 justify-center text-center gap-y-3 sm:gap-y-0'>
                     <li className='footerLinks'><a href="/">Home</a></li>
                     <li className='footerLinks'><a href="https://www.instagram.com/damiolatunjii/">Instagram</a></li>
                     <li className='footerLinks'><a href="https://www.linkedin.com/in/dami-olatunji-71b992227/">LinkedIn</a></li>

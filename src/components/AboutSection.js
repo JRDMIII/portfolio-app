@@ -33,7 +33,7 @@ export default function AboutSection({ skills, images, interestArray }) {
           initial="hidden"
           animate="visible" 
           transition={{ duration: 1 }}
-          id='about-title' className='text-4xl text-center sm:text-left font-bold m-5'>
+          id='about-title' className='sm:text-4xl text-2xl text-left font-bold m-5'>
             I'm Dami, an aspiring&nbsp; 
             <b>software engineer</b> studying at the&nbsp;
             <a href='https://warwick.ac.uk' className='text-gray-400 hover:text-gray-200 transition-all duration-700'><b>University of Warwick</b></a>.
@@ -44,7 +44,7 @@ export default function AboutSection({ skills, images, interestArray }) {
           initial="hidden" 
           animate="visible" 
           transition={{ duration: 1, delay: 0.35 }}
-          className='text-3xl sm:text-3xl text-center sm:text-left font-light m-5'>
+          className='text-[16px] sm:text-3xl text-left font-light m-5'>
             Hey, I'm <b>Dami</b>, a Computer Scientist in my first year at the University of Warwick.
             I'm based in London and have a passion for sleek design and clean interfaces.
             I'm in the early stages of learning to utilise the <a href='https://nextjs.org' className='font-semibold text-gray-400 hover:text-gray-200 transition-all duration-700'>Nextjs</a> framework to create portfolio's and personal websites.
@@ -57,13 +57,13 @@ export default function AboutSection({ skills, images, interestArray }) {
         animate={staggeredListAnimation}
         layout
         className='flex-1 w-full px-10 pt-5 sm:pt-0 sm:px-0 mx-40'>
-          <motion.h1 initial={interestListInit} className='text-6xl sm:text-2xl pb-6 font-semibold text-center sm:text-left'>My Interests</motion.h1>
+          <motion.h1 initial={interestListInit} className='text-2xl sm:pb-6 pb-4 font-semibold text-left'>My Interests</motion.h1>
           <ul id='interests' className='pb-10 space-y-6'>
-            <motion.li initial={interestListInit} className='text-xl flex justify-center sm:justify-start'>
+            <motion.li initial={interestListInit} className='text-xl flex justify-start'>
               <div className='flex group/item cursor-default w-fit relative rounded-md'>
-                <h1 className='sm:text-left text-center sm:text-xl text-4xl highlightLink cursor-pointer pl-5'>Digital Art 🎨</h1>
+                <h1 className='sm:text-left text-center text-xl highlightLink cursor-pointer pl-5'>Digital Art 🎨</h1>
 
-                <span className='tooltipText bg-slate-950 grid py-4 group-hover/item:opacity-100 group-hover/item:visible transition-all duration-700 left-[110%] w-[300px] h-[300px] overflow-y-scroll gap-y-4'>
+                <span className='tooltipText bg-slate-950 grid py-4 group-hover/item:opacity-100 group-hover/item:visible transition-all duration-700 sm:left-[110%] sm:w-[300px] w-[250px] h-[300px] overflow-y-scroll gap-y-4'>
                   <h1 className='text-sm text-center font-light'>Art Examples</h1>
                   {
                     images[0].map((image) => (
@@ -75,13 +75,13 @@ export default function AboutSection({ skills, images, interestArray }) {
             </motion.li>
             {
               interestArray[0].map((text) => (
-                <motion.li initial={interestListInit} className='text-xl pl-5 text-center sm:text-left'>{ text }</motion.li>
+                <motion.li initial={interestListInit} className='text-xl pl-5 text-left'>{ text }</motion.li>
               ))
             }
           </ul>
 
-          <motion.h1 initial={interestListInit} className='text-2xl pb-10 sm:pb-6 font-semibold'>Skills</motion.h1>
-          <ul id='skills' className='grid grid-cols-[80px_80px_80px_80px] sm:grid-cols-[80px_80px_80px_80px_80px] gap-x-3 gap-y-3 justify-center sm:items-left items-center pb-6 w-fit'>
+          <motion.h1 initial={interestListInit} className='text-2xl pb-2 text-left sm:pb-6 font-semibold'>Skills</motion.h1>
+          <ul id='skills' className='grid grid-cols-[80px_80px_80px] sm:grid-cols-[80px_80px_80px_80px] sm:gap-x-3 gap-x-6 gap-y-2 justify-center sm:pb-6 pb-4'>
             { 
               skills.map(({ symbol, name, description }) => (
                 <motion.li key={name} initial={interestListInit} id='skill'><MotionSkill symbol={symbol} name={name} desc={description} /></motion.li>
