@@ -81,7 +81,7 @@ export default function AboutSection({ skills, images, interestArray }) {
           </ul>
 
           <motion.h1 initial={interestListInit} className='text-2xl pb-2 text-left sm:pb-6 font-semibold'>Skills</motion.h1>
-          <ul id='skills' className='grid grid-cols-[80px_80px_80px] sm:grid-cols-[80px_80px_80px_80px] sm:gap-x-3 gap-x-6 gap-y-2 justify-center sm:pb-6 pb-4'>
+          <ul id='skills' className='grid grid-cols-[80px_80px_80px] sm:grid-cols-[80px_80px_80px_80px] gap-x-2 gap-y-2 justify-center sm:pb-6 pb-4'>
             { 
               skills.map(({ symbol, name, description }) => (
                 <motion.li key={name} initial={interestListInit} id='skill'><MotionSkill symbol={symbol} name={name} desc={description} /></motion.li>
